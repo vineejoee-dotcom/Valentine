@@ -47,4 +47,6 @@ h1 {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    min-width: 120px; /* Adds space for the longer text */
+    white-space: nowrap; /* Prevents the text from jumping to two lines */
 }
