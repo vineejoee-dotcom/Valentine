@@ -16,14 +16,17 @@ function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
 
-    noButton.textContent = messages[messageIndex];
+    // This keeps the "No" and adds the message in brackets
+    noButton.textContent = `No (${messages[messageIndex]})`;
+    
+    // Move to the next message
     messageIndex = (messageIndex + 1) % messages.length;
 
+    // Make the Yes button grow
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
 }
 
 function handleYesClick() {
-    // This will redirect to your success page
     window.location.href = "yes_page.html";
 }
