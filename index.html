@@ -5,12 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine?</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* This creates a pulsing heart without needing a GIF file */
+        .heart {
+            background-color: red;
+            display: inline-block;
+            height: 50px;
+            margin: 0 10px;
+            position: relative;
+            top: 0;
+            transform: rotate(-45deg);
+            width: 50px;
+            animation: pulse 0.6s infinite alternate;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+        }
+        .heart:before { top: -25px; left: 0; }
+        .heart:after { left: 25px; top: 0; }
+        @keyframes pulse {
+            from { transform: rotate(-45deg) scale(1); }
+            to { transform: rotate(-45deg) scale(1.2); }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Will you be my Valentine? 🌹</h1>
         <div class="gif-container">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXN2eHozY3B6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/K97vX6K0YkbS0Ssh0P/giphy.gif" alt="Cute gif">
+            <div class="heart"></div>
         </div>
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
